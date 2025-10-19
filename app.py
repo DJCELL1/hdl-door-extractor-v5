@@ -23,7 +23,8 @@ import streamlit as st
 import pdfplumber
 import pytesseract
 import pdf2image
-import os from main import extractor   # ✅ add this
+import os
+from main import extractor   # ✅ correct
 import openpyxl
 import pandas as pd
 import re
