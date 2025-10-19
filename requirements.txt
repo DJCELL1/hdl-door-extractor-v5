@@ -6,3 +6,4 @@ openpyxl
 click
 regex
 streamlit
+imghdr-py
