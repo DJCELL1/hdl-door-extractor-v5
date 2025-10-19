@@ -24,7 +24,7 @@ import pdfplumber
 import pytesseract
 import pdf2image
 import os
-from main import extractor   # ✅ correct
+import extractor   # ✅ correct for your structure
 import openpyxl
 import pandas as pd
 import re
