@@ -1,10 +1,10 @@
-# Temporary compatibility shim for Python 3.13+
-# Streamlit <1.39 still imports imghdr, which was removed from stdlib.
+# Compatibility shim for Python 3.13+
+# Streamlit <1.39 still imports 'imghdr', which was removed.
 
 import io
 
 def what(file, h=None):
-    """Always return 'png' if bytes start with PNG header, otherwise None."""
+    """Return 'png' for PNG headers, otherwise None."""
     if h is None:
         if hasattr(file, 'read'):
             pos = file.tell()
@@ -15,3 +15,4 @@ def what(file, h=None):
     if isinstance(h, (bytes, bytearray)) and h.startswith(b'\211PNG\r\n\032\n'):
         return "png"
     return None
+
