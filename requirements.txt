@@ -5,5 +5,4 @@ pytesseract
 openpyxl
 click
 regex
-streamlit
-imghdr-py
+streamlitimghdr-py
