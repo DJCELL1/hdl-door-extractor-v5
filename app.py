@@ -26,6 +26,7 @@ import pdf2image
 import openpyxl
 import pandas as pd
 import re
+import tempfile
 from PIL import Image
 from pathlib import Path
 from io import BytesIO
