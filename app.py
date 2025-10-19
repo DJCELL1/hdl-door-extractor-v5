@@ -1,3 +1,16 @@
+# --- Patch for Python 3.13 removal of imghdr ---
+import sys
+import importlib.util
+import pathlib
+
+imghdr_path = pathlib.Path(__file__).parent / "imghdr.py"
+if imghdr_path.exists():
+    spec = importlib.util.spec_from_file_location("imghdr", imghdr_path)
+    imghdr = importlib.util.module_from_spec(spec)
+    sys.modules["imghdr"] = imghdr
+    spec.loader.exec_module(imghdr)
+# ------------------------------------------------
+
 import os, tempfile, streamlit as st, pandas as pd
 import HDL_Door_Schedule_Extractor_v5 as extractor
 from pathlib import Path
