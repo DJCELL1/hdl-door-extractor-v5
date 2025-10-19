@@ -1,4 +1,10 @@
-# --- Patch for Python 3.13 removal of imghdr ---
+# =============================================================================
+# HDL Door Schedule Extractor v5 | Streamlit Frontend
+# =============================================================================
+# Fix for Python 3.13 - imghdr module was removed from stdlib
+# This block ensures Streamlit can still import it correctly
+# =============================================================================
+
 import sys
 import importlib.util
 import pathlib
@@ -9,11 +15,21 @@ if imghdr_path.exists():
     imghdr = importlib.util.module_from_spec(spec)
     sys.modules["imghdr"] = imghdr
     spec.loader.exec_module(imghdr)
-# ------------------------------------------------
 
-import os, tempfile, streamlit as st, pandas as pd
-import HDL_Door_Schedule_Extractor_v5 as extractor
+# =============================================================================
+# Standard imports
+# =============================================================================
+import streamlit as st
+import pdfplumber
+import pytesseract
+import pdf2image
+import openpyxl
+import pandas as pd
+import re
+from PIL import Image
 from pathlib import Path
+from io import BytesIO
+
 
 st.set_page_config(page_title='HDL Door Schedule Extractor v5', page_icon='🚪', layout='wide')
 st.title('🚪 HDL Door Schedule Extractor v5')
