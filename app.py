@@ -27,7 +27,6 @@ import openpyxl
 import pandas as pd
 import re
 import tempfile
-import extractor
 from PIL import Image
 from pathlib import Path
 from io import BytesIO
