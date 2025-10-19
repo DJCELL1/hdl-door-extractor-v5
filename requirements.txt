@@ -1,0 +1,8 @@
+pdfplumber
+pdf2image
+pillow
+pytesseract
+openpyxl
+click
+regex
+streamlit
